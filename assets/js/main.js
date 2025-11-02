@@ -100,82 +100,19 @@
 		$('.smooth-scroll-middle').scrolly({ anchor: 'middle' });
 
 	// Wrapper.
-		$wrapper.children()
-			.scrollex({
-				top:		'30vh',
-				bottom:		'30vh',
-				initialize:	function() {
-					$(this).addClass('is-inactive');
-				},
-				terminate:	function() {
-					$(this).removeClass('is-inactive');
-				},
-				enter:		function() {
-					$(this).removeClass('is-inactive');
-				},
-				leave:		function() {
-
-					var $this = $(this);
-
-					if ($this.hasClass('onscroll-bidirectional'))
-						$this.addClass('is-inactive');
-
-				}
-			});
+		$wrapper.children().removeClass('is-inactive');
 
 	// Items.
 		$('.items')
-			.scrollex({
-				top:		'30vh',
-				bottom:		'30vh',
-				delay:		50,
-				initialize:	function() {
-					$(this).addClass('is-inactive');
-				},
-				terminate:	function() {
-					$(this).removeClass('is-inactive');
-				},
-				enter:		function() {
-					$(this).removeClass('is-inactive');
-				},
-				leave:		function() {
-
-					var $this = $(this);
-
-					if ($this.hasClass('onscroll-bidirectional'))
-						$this.addClass('is-inactive');
-
-				}
-			})
+			.removeClass('is-inactive')
 			.children()
 				.wrapInner('<div class="inner"></div>');
 
 	// Gallery.
 		$('.gallery')
+			.removeClass('is-inactive')
 			.wrapInner('<div class="inner"></div>')
 			.prepend(browser.mobile ? '' : '<div class="forward"></div><div class="backward"></div>')
-			.scrollex({
-				top:		'30vh',
-				bottom:		'30vh',
-				delay:		50,
-				initialize:	function() {
-					$(this).addClass('is-inactive');
-				},
-				terminate:	function() {
-					$(this).removeClass('is-inactive');
-				},
-				enter:		function() {
-					$(this).removeClass('is-inactive');
-				},
-				leave:		function() {
-
-					var $this = $(this);
-
-					if ($this.hasClass('onscroll-bidirectional'))
-						$this.addClass('is-inactive');
-
-				}
-			})
 			.children('.inner')
 				//.css('overflow', 'hidden')
 				.css('overflow-y', browser.mobile ? 'visible' : 'hidden')
